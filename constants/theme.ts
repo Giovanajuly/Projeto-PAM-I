@@ -8,6 +8,18 @@ import { Platform } from 'react-native';
 const tintColorLight = '#0a7ea4';
 const tintColorDark = '#fff';
 
+//eu q fiz, resto tudo veio 
+export const themas = {
+  colors: {
+    primary:'#FCDDEC',
+    secondary:'#FF4AE4',
+    tertiary: '#6B0A1D',
+    white:'#ffff',
+    gray:'#656565',
+    black:'#000'
+  }
+}
+
 export const Colors = {
   light: {
     text: '#11181C',
