@@ -50,7 +50,7 @@ export const style = StyleSheet.create({
         //  marginTop:20
      },
     
-    boxInput:{
+    boxInput:{ // ta no do componente
         width:'100%',
         height:40,
         // borderWidth:1,
@@ -66,7 +66,7 @@ export const style = StyleSheet.create({
           shadowRadius: 6.68,
           elevation: 11,
     },
-    input:{
+    input:{ // ta no do componente
         color:themas.colors.gray,
         height:'100%',
         width:'100%',
