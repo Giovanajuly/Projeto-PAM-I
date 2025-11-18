@@ -10,8 +10,7 @@ export const style = StyleSheet.create({
 
     boxInput:{
         width:'100%',
-        height:40,
-        // borderWidth:1,
+        height:40,     
         borderRadius:10,
         marginTop:30,
         flexDirection:'row',
@@ -32,8 +31,6 @@ export const style = StyleSheet.create({
         flex:1,
             color:themas.colors.gray,
             height:'100%',
-            // width:'100%',
-            // backgroundColor:themas.colors.white, tava deixando o icone sem o branco de fundo
             borderRadius:10,
             paddingLeft:10
         },

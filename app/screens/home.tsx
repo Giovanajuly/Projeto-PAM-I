@@ -1,10 +1,10 @@
-import { Button, Dimensions,FlatList, StyleSheet, Text, View, Image } from "react-native";
+import { Dimensions, FlatList, StyleSheet, View, Image } from "react-native";
 import { themas } from '../constants/theme';
 
 import { Input } from "@/app/components/input";
 import { Flags } from "@/app/components/flags";
 import { Container } from "../components/container";
-import { receitas, Receita} from '../data/receitas'
+import { receitas, Receita } from '../data/receitas'
 
 import { MaterialIcons } from "@expo/vector-icons";
 export default function Home() {
@@ -21,37 +21,39 @@ export default function Home() {
                     iconLeftName="search"
                     placeholder="Encontrar receitas" />
 
-                {/* de alguma forma jesus cristo senhor arrumar essa porra desse input do caralho */}
 
             </View>
             <View style={style.mid}>
-                <Flags label="Mexicana" />
-                <Flags label="Argentina" />
-                <Flags label="Brasileira" />
+                <Flags label="Mexicana"
+                    style={{ backgroundColor: themas.colors.primary, borderColor: "#e37e7eff" }}
+                    textStyle={{ color: "#000000ff" }}
+                />
+                <Flags label="Argentina"
+                    style={{ backgroundColor: themas.colors.primary, borderColor: "#e37e7eff" }}
+                    textStyle={{ color: "#000000ff" }} />
+                <Flags label="Brasileira"
+                    style={{ backgroundColor: themas.colors.primary, borderColor: "#e37ec1ff" }}
+                    textStyle={{ color: "#000000ff" }}
+                />
 
             </View>
-<View style={style.middle}>
-  <FlatList
-        data={receitas}
-        keyExtractor={(item) => item.id}
-        renderItem={({ item }: { item: Receita}) => (
-          <Container
-            image={item.image}
-            title={item.title}
-            description={item.description}
-          />
-        )}
-        contentContainerStyle={{ padding: 20 }}
-      />
-      <View style={style.aa}>
-              <Flags label="Mexicana" />
-                <Flags label="Argentina" />
-                <Flags label="Brasileira" />
-
-                </View>
+            <View style={style.middle}>
+                <FlatList
+                    data={receitas}
+                    keyExtractor={(item) => item.id}
+                    renderItem={({ item }: { item: Receita }) => (
+                        <Container
+                            image={item.image}
+                            title={item.title}
+                            description={item.description}
+                            flags={item.flags}
+                        />
+                    )}
+                    contentContainerStyle={{ padding: 20 }}
+                />
 
 
-</View>
+            </View>
 
 
 
@@ -65,15 +67,14 @@ const style = StyleSheet.create({
 
         flex: 1,
         alignItems: 'center',
-        backgroundColor: 'red'
+        backgroundColor: themas.colors.white
     },
 
     header: {
 
         width: '100%',
         height: 100,
-        // height:Dimensions.get('window').height/5,
-        backgroundColor: 'blue',
+        backgroundColor: themas.colors.primary,
         flexDirection: 'row',
         alignItems: 'center',
         paddingHorizontal: 15,
@@ -93,21 +94,16 @@ const style = StyleSheet.create({
 
     },
     mid: {
-       width: '100%',
+        width: '100%',
         flexDirection: "row",
         padding: 10,
-        backgroundColor: 'pink',
-        justifyContent:'space-between'
+        justifyContent: 'space-between'
 
 
     },
-    middle:{
-        width:'100%',
-        height:'100%',
-        backgroundColor: 'purple',
-
-
-    },
-    aa:{}
+    middle: {
+        width: '100%',
+        height: '100%',
+    }
 
 })

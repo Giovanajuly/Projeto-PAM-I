@@ -4,9 +4,8 @@ import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity } from "reac
 import { style } from "./styles";
 import { themas } from "@/app/constants/theme";
 import { Input } from "@/app/components/input";
-import { useNavigation, NavigationProp } from "@react-navigation/native";
 
-// const navigation = useNavigation<NavigationProp<any>>();
+import { useNavigation, NavigationProp } from "@react-navigation/native";
 
 
 
@@ -29,21 +28,14 @@ export default function Login() {
       <View style={style.boxMid}> {/* separaçao > meio da tela*/}
 
         <Input
-          IconLeft={MaterialIcons}
-          iconLeftName="looks"
+          // IconLeft={MaterialIcons}
+          // iconLeftName="looks"
           placeholder="Digite seu email" />
         <Input
           placeholder="Escreva sua senha"
         />
 
-        <View style={style.boxBottom}>
-          {/* <TouchableOpacity onPress={() => navigation.navigate("BottomRoutes")} style={style.button}>
-            <Text style={style.textobutton}>
-              Iniciar Sessão</Text>
-
-          </TouchableOpacity> */}
-          
-        </View>
+        
 
       </View>
 

@@ -4,9 +4,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Login from '../screens/inicio';
 import Cadastro from '../screens/cadastro';
 import BottomRoutes from './bottom.routes';
-// import BottomRoutes from './bottom.routes';
 
-// const Stack = createNativeStackNavigator();
 
 export default function Routes() {
   
