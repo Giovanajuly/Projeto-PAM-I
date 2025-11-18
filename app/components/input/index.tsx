@@ -24,10 +24,11 @@ type InputProps = TextInputProps & {
 }
 
 export const Input = forwardRef<TextInput, InputProps>( // parei em 18:00 no video
-    ({ placeholder, IconLeft, IconRight, iconLeftName, iconRightName, title, onIconLeftPress, onIconRightPress,containerStyle, ...rest }, ref) => {
+    ({ containerStyle, placeholder, IconLeft, IconRight, iconLeftName, iconRightName, title, onIconLeftPress, onIconRightPress, ...rest }, ref) => {
         return (
            
-            <><View style={style.boxInput}>
+            <>
+            <View style={[style.boxInput, containerStyle]}>
 
                 {IconLeft && iconLeftName && (
                     <IconLeft
