@@ -1,7 +1,7 @@
 import React, { forwardRef } from "react";
 import { View, Text, Image, StyleSheet } from 'react-native';
-import { style } from "../input/styles";
 import { themas } from "@/app/constants/theme";
+import { Flags } from "../flags";
 
 
 
@@ -10,10 +10,11 @@ type ContainerProps = {
     image?: string;
     title?: string;
     description?: string;
+    flags : string[];
     
 }
 
-export function Container ({ label, image, title, description}: ContainerProps) {
+export function Container ({ label, image, title, flags, description}: ContainerProps) {
     return (
          <View style={styles.card}>
       <Image source={{ uri: image }} style={styles.image} />
@@ -21,6 +22,13 @@ export function Container ({ label, image, title, description}: ContainerProps) 
       <View style={styles.info}>
         <Text style={styles.title}>{title}</Text>
         <Text style={styles.description}>{description}</Text>
+
+       <View style={styles.flagsArea}>
+          {flags.map((item, index) => (
+            <Flags  key={index} label={item} />
+          ))}
+        </View>
+        
       </View>
     </View>
     );
@@ -28,7 +36,7 @@ export function Container ({ label, image, title, description}: ContainerProps) 
    const styles = StyleSheet.create({
   card: {
     flexDirection: 'row',
-    backgroundColor: '#fff',
+    backgroundColor: themas.colors.primary,
     marginBottom: 15,
     padding: 10,
     borderRadius: 8,
@@ -51,5 +59,11 @@ export function Container ({ label, image, title, description}: ContainerProps) 
   description: {
     color: '#555',
   },
+    flagsArea: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    marginTop: 8,
+    gap: 6
+  }
 });
 

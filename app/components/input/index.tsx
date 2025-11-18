@@ -13,7 +13,7 @@ type IconComponent =
 
 type InputProps = TextInputProps & {
     placeholder?: string;
-    title?: string  // se for colocar tem q fazer o title input e estilizar, aq msm
+    title?: string
     IconLeft?: IconComponent,
     IconRight?: IconComponent,
     iconLeftName?: string,
@@ -23,40 +23,39 @@ type InputProps = TextInputProps & {
     containerStyle?: object;
 }
 
-export const Input = forwardRef<TextInput, InputProps>( // parei em 18:00 no video
+export const Input = forwardRef<TextInput, InputProps>(
     ({ containerStyle, placeholder, IconLeft, IconRight, iconLeftName, iconRightName, title, onIconLeftPress, onIconRightPress, ...rest }, ref) => {
         return (
-           
+
             <>
-            <View style={[style.boxInput, containerStyle]}>
+                <View style={[style.boxInput, containerStyle]}>
 
-                {IconLeft && iconLeftName && (
-                    <IconLeft
-                        name={iconLeftName as any}
-                        size={22}
-                        color={themas.colors.gray}
-                        style={style.icon}
-                    />)}
+                    {IconLeft && iconLeftName && (
+                        <IconLeft
+                            name={iconLeftName as any}
+                            size={22}
+                            color={themas.colors.gray}
+                            style={style.icon}
+                        />)}
 
-                <TextInput
-                    style={style.input} /* nome da estilização*/
-                    placeholder={placeholder}
-                    {...rest}
-                /> {/* texto dentro do input*/}
+                    <TextInput
+                        style={style.input} /* nome da estilização*/
+                        placeholder={placeholder}
+                        {...rest}
+                    /> {/* texto dentro do input*/}
 
-                {IconRight && iconRightName && (
-                    // se for usar <TouchableOpacity onPress={onIconRightPress}>
-                    <IconRight
-                        name={iconRightName as any}
-                        size={22}
-                        color={themas.colors.gray}
-                        style={style.icon}
-                    />
-                    // </TouchableOpacity>
-                )}
+                    {IconRight && iconRightName && (
+                        <IconRight
+                            name={iconRightName as any}
+                            size={22}
+                            color={themas.colors.gray}
+                            style={style.icon}
+                        />
+
+                    )}
 
 
-            </View>
+                </View>
 
             </>
 
